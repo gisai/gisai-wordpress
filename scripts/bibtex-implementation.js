@@ -22,12 +22,11 @@ jQuery( function ( $ ) {
 		}
 	} )
 
-	$( document ).on( 'click', '.copy-to-clipboard', function () {
-		console.log( 'click' );
-		var target = '#' + $( this ).attr( 'data-target' );
-		var text = $( target ).select();
-		document.execCommand( "copy" );
-		alert( "Copiado al portapapeles: " + text );
+	var clipboard = new ClipboardJS( '.copy-to-clipboard' );
+
+	clipboard.on( 'success', function ( e ) {
+		alert( 'Copiado en el portapapeles.' );
+		e.clearSelection();
 	} );
 
 } );
