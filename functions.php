@@ -16,9 +16,12 @@ function sydney_pro_child_enqueue() {
 }
 
 function add_myjavascript(){
-  wp_enqueue_script( 'ajax-implementation.js', get_stylesheet_directory() . '/scripts/ajax-implementation.js', array( 'jquery' ), null );
-  wp_enqueue_script( 'bibtex-implementation.js', get_stylesheet_directory() . '/scripts/bibtex-implementation.js', array( 'jquery' ), null );
-  wp_enqueue_script( 'filter-implementation.js', get_stylesheet_directory() . '/scripts/filter-implementation.js', array( 'jquery' ), null );
+  wp_register_script( 'ajax-implementation.js', get_stylesheet_directory_uri() . '/scripts/ajax-implementation.js', array( 'jquery' ), null, true );
+  wp_enqueue_script('ajax-implementation.js');
+  wp_register_script( 'bibtex-implementation.js', get_stylesheet_directory_uri() . '/scripts/bibtex-implementation.js', array( 'jquery' ), null, true );
+  wp_enqueue_script('bibtex-implementation.js');
+  wp_register_script( 'filter-implementation.js', get_stylesheet_directory_uri() . '/scripts/filter-implementation.js', array( 'jquery' ), null, true );
+  wp_enqueue_script('filter-implementation.js');
   wp_register_script( 'clipboardJS', 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js', null, null, true );
   wp_enqueue_script('clipboardJS');
 }
