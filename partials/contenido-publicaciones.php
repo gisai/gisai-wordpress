@@ -38,12 +38,6 @@
 			/**********************
 							FILTER
 			***********************/
-			$years = [];
-			foreach($publications as $pub){
-				array_push($years, $pub['year']);
-			}
-			$years = array_unique($years);
-
 			$types = [];
 			foreach($publications as $pub){
 				array_push($types, $pub['type']);
@@ -71,14 +65,7 @@
 
 		<div class="row">
 			<div class="col-lg-4">
-				<select id="filter-year" class="custom-select">
-					<option value="">Año de publicación...</option>
-					<?php
-						foreach($years as $year){
-							echo ("<option value=" . format_data($year) . ">" . $year . "</option>");
-						}
-					?>
-				</select>
+				<input id="filter-author" class="custom-input"/>
 			</div>
 			<div class="col-lg-4">
 				<select id="filter-type" class="custom-select">
@@ -116,7 +103,7 @@
 				$counter++;
 			?>
 
-			<div class="row vertical-align publication" data-year="<?php echo $publication['year']?>" data-type="<?php echo format_data($publication['type'])?>" data-journal="<?php echo format_data($publication['journal'])?>">
+			<div class="row vertical-align publication" data-author="<?php echo strtolower($publication['author'])?>" data-type="<?php echo format_data($publication['type'])?>" data-journal="<?php echo format_data($publication['journal'])?>">
 				<div class="col-lg-2 publication-type-col">
 					<div class="publication-type publication-<?php echo $publication['type']?>">
 						<?php echo $publication['type']?>

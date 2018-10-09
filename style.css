@@ -75,6 +75,19 @@ Custom
   -webkit-appearance: none;
 }
 
+.custom-input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 20px;
+  background-color: transparent;
+  border: 1px solid #182E38;
+  border-radius: 0.25em;
+  line-height: 1;
+  height: 34px;
+  -webkit-appearance: none;
+}
+
+
 @media (max-width: 1200px) {
   .header-menu-image {
     display: none;
@@ -479,12 +492,6 @@ Publicaciones
 }
 
 .publication-inproceedings {
-  border: 1px solid rgba(255, 77, 97, 1);
-  color: #f5f1d5;
-  background-color: rgba(255, 77, 97, 0.7);
-}
-
-.publication-proceedings {
   border: 1px solid rgba(24, 46, 56, 1);
   color: #f5f1d5;
   background-color: rgba(24, 46, 56, 0.7);
