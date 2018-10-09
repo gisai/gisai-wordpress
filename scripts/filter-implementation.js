@@ -1,14 +1,14 @@
 jQuery( function ( $ ) {
 
 	var filter = {
-		'year': null,
+		'author': null,
 		'type': null,
 		'journal': null,
 	};
 
 	function filterFunction() {
 		$( '.publication' ).map( function () {
-			if ( filter.year != null && $( this ).attr( 'data-year' ) != filter.year ) {
+			if ( filter.author != null && filter.author != 'Autor...' && $( this ).attr( 'data-author' ).indexOf(filter.author.toLowerCase()) == -1 ) {
 				$( this ).slideUp( "slow" );
 			} else
 			if ( filter.type != null && $( this ).attr( 'data-type' ) != filter.type ) {
@@ -23,11 +23,26 @@ jQuery( function ( $ ) {
 	}
 
 	$( document ).ready( function () {
-		$( '#filter-year' ).on( 'change', function () {
+
+		$( '#filter-author' ).val('Autor...');
+
+		$( '#filter-author').on('focusin', function () {
+			if($( this ).val() == 'Autor...') {
+				$( this ).val('');
+			}
+		});
+
+		$( '#filter-author').on('focusout', function () {
+			if ($( this ).val() == '') {
+				$( this ).val('Autor...');
+			}
+		});
+
+		$( '#filter-author' ).on( 'keyup', function () {
 			if ( $( this ).val() == "" ) {
-				filter.year = null
+				filter.author = null
 			} else {
-				filter.year = $( this ).val()
+				filter.author = $( this ).val()
 			}
 			filterFunction()
 		} )
