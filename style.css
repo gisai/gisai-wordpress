@@ -574,15 +574,74 @@ Publicaciones
 /*--------------------------------------------------------------
 Ofertas
 --------------------------------------------------------------*/
-.detalles-oferta{
+.detalles-oferta {
+  position: relative;
   border: 1px solid #182E38;
   border-radius: 0.25rem;
-  padding: 15px;
+  padding: 25px;
   margin: 15px;
 }
 
-.datos-oferta div:last-child h5{
+.datos-oferta div:last-child h5 {
   color: #4A849F;
+}
+
+.indicador-oferta-detalles-inactivo {
+  font-family: Nunito, sans-serif;
+  color: white;
+  background-color: #FF4D61;
+  font-size: 1em;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  padding: 5px 20px;
+  margin: 21px 16px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border: 1px solid #4a849f;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+.indicador-oferta-inactivo {
+  font-family: Nunito, sans-serif;
+  color: white;
+  background-color: #FF4D61;
+  font-size: 1em;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  padding: 5px 20px;
+  margin: 21px 16px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border-top: 1px solid #4a849f;
+  border-left: 1px solid #4a849f;
+  border-top-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  overflow: hidden;
+}
+
+.indicador-oferta-activo {
+  font-family: Nunito, sans-serif;
+  color: white;
+  background-color: #66CD00;
+  font-size: 1em;
+  cursor: pointer;
+  width: 20%;
+  text-align: center;
+  padding: 5px 20px;
+  margin: 21px 16px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border-top: 1px solid #4a849f;
+  border-left: 1px solid #4a849f;
+  border-top-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  overflow: hidden;
 }
 
 /*--------------------------------------------------------------
