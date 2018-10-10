@@ -6,6 +6,19 @@
 
 <?php $meta = custom_get_meta( get_the_ID() )?>
 
+<?php
+	$fecha = $meta['wpcf-oferta-plazo'];
+	$arrayFecha = explode("/", $fecha);
+	$fecha = mktime(0, 0, 0, $arrayFecha[1], $arrayFecha[0], $arrayFecha[2]);
+	if(time() > $fecha ) {
+		$clase = "indicador-oferta-inactivo";
+		$texto = "Fuera de plazo";
+	} else {
+		$clase = "indicador-oferta-activo";
+		$texto = "Abierto";
+ }
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content project-content">
@@ -142,9 +155,8 @@
 					</div>
 				<?php } ?>
 
-				<hr>
-
-				<?php if(!empty($meta['wpcf-oferta-contacto'])) {?>
+				<?php if(!empty($meta['wpcf-oferta-contacto']) && time() < $fecha) {?>
+					<hr>
 					<a href="mailto:<?php echo($meta['wpcf-oferta-contacto']);?>"><button class="btn btn-block btn-primary">Remitir curriculum vitae (por correo electrónico)</button></a>
 				<?php } ?>
 

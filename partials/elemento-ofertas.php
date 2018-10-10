@@ -9,6 +9,19 @@
 	<?php $meta = custom_get_meta( get_the_ID() )?>
 	<?php $featured_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); ?>
 
+	<?php
+		$fecha = $meta['wpcf-oferta-plazo'];
+		$arrayFecha = explode("/", $fecha);
+		$fecha = mktime(0, 0, 0, $arrayFecha[1], $arrayFecha[0], $arrayFecha[2]);
+		if(time() > $fecha ) {
+			$clase = "indicador-oferta-inactivo";
+			$texto = "Fuera de plazo";
+		} else {
+		 	$clase = "indicador-oferta-activo";
+			$texto = "Abierto";
+	 }
+	?>
+
 	<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-12'); ?>>
 		<div class="list-item box-shadow" onclick="window.location='<?php echo get_permalink(); ?>';">
 			<div class="row vertical-align">
@@ -60,6 +73,9 @@
 					<?php } ?>
 
 				</div>
+			</div>
+			<div class="<?php echo $clase ?>">
+				<?php echo $texto ?>	
 			</div>
 		</div>
 	</div>
