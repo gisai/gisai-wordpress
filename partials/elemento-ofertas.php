@@ -15,10 +15,10 @@
 		$fecha = mktime(0, 0, 0, $arrayFecha[1], $arrayFecha[0], $arrayFecha[2]);
 		if(time() > $fecha ) {
 			$clase = "indicador-oferta-inactivo";
-			$texto = "Fuera de plazo";
+			$texto = "No activa";
 		} else {
 		 	$clase = "indicador-oferta-activo";
-			$texto = "Abierto";
+			$texto = "Activa";
 	 }
 	?>
 
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 			<div class="<?php echo $clase ?>">
-				<?php echo $texto ?>	
+				<?php echo $texto ?>
 			</div>
 		</div>
 	</div>
