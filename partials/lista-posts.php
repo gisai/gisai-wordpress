@@ -12,7 +12,12 @@
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$post_per_page = get_post_meta( get_the_ID(), 'wpcf-posts-por-pagina', true );
 	$post_type = get_post_meta( get_the_ID(), 'wpcf-pagina-post', true);
-	$loop = new WP_Query( array( 'post_type' => $post_type, 'paged' => $paged, 'posts_per_page' => $post_per_page, 'order' => 'DESC', 'orderby' => 'date' ) );
+	if ($post_type == 'proyectos') {
+		$financiacion = get_post_meta( get_the_ID(), 'wpcf-pagina-financiacion', true);
+		$loop = new WP_Query( array( 'post_type' => $post_type, 'meta_key' => 'wpcf-proyecto-financiacion', 'meta_value' => $financiacion, 'meta_compare' => '==', 'paged' => $paged, 'posts_per_page' => $post_per_page, 'order' => 'DESC', 'orderby' => 'date' ) );
+	} else {
+		$loop = new WP_Query( array( 'post_type' => $post_type, 'paged' => $paged, 'posts_per_page' => $post_per_page, 'order' => 'DESC', 'orderby' => 'date' ) );
+	}
 ?>
 
 <div class="row">

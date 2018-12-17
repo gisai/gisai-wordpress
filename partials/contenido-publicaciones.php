@@ -136,7 +136,7 @@
 						<div class="bibtex-content" id="bibtex-content-<?php echo $counter ?>">
 							<?php echo nl2br($bibtex) ?>
 						</div>
-						<div class="copy-to-clipboard"  data-clipboard-target="#bibtex-content-<?php echo $counter ?>">
+						<div class="copy-to-clipboard" data-clipboard-target="#bibtex-content-<?php echo $counter ?>">
 							<i class="fa fa-clipboard" aria-hidden="true"></i> Copiar contenido
 						</div>
 					</div>
