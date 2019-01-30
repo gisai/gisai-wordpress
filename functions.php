@@ -94,6 +94,7 @@ function add_widget_tabs($tabs) {
 require get_stylesheet_directory() . "/widgets/lista.php";
 require get_stylesheet_directory() . "/widgets/investigacion-A.php";
 require get_stylesheet_directory() . "/widgets/investigacion-B.php";
+require get_stylesheet_directory() . "/widgets/tecnologia.php";
 require get_stylesheet_directory() . "/widgets/colaboraciones.php";
 require get_stylesheet_directory() . "/widgets/accion.php";
 require get_stylesheet_directory() . "/widgets/video.php";
@@ -113,6 +114,7 @@ function custom_widgets_init() {
     register_widget( 'Custom_Lista' );
 		register_widget( 'Custom_Investigacion_A' );
 		register_widget( 'Custom_Investigacion_B' );
+        register_widget( 'Custom_Tecnologia' );
 		register_widget( 'Custom_Colaboraciones' );
 		register_widget( 'Custom_Accion' );
 		register_widget( 'Custom_Video' );
