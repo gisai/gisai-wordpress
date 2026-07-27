@@ -51,7 +51,7 @@
       <div class="container-fluid">
 				<div class="row vertical-align">
 					<div class="col-lg-2 text-right"> <!-- Imagen del grupo -->
-						<img class="header-menu-image" src="http://gisai.dit.upm.es/wp-content/uploads/logo-gisai.png"/>
+						<img class="header-menu-image" src="wp-content/uploads/logo_gisai_v2.png"/>
 					</div> <!-- Imagen del grupo -->
 					<div class="col-lg-8 text-center">
 						<div class="row header-menu">
@@ -72,7 +72,7 @@
 						</div>
 					</div>
 					<div class="col-lg-2 text-left"> <!-- Imagen de la universidad -->
-						<img class="header-menu-image" src="http://gisai.dit.upm.es/wp-content/uploads/logo-upm.png"/>
+						<img class="header-menu-image" src="wp-content/uploads/logo-upm.png"/>
 					</div> <!-- Imagen de la universidad -->
 				</div>
 			</div>
@@ -89,7 +89,7 @@
 		</div>
 		<?php sydney_header_video(); ?>
 
-		<?php do_action('sydney_inside_hero'); ?>
+		<?php do_action('sydney_inside_hero'); ?> 
 	</div>
 
 	<?php do_action('sydney_after_hero'); ?>

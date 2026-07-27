@@ -62,6 +62,8 @@ class Sydney_Toolbox {
 		require_once( ST_DIR . 'inc/post-type-colaboraciones.php' );
 		require_once( ST_DIR . 'inc/post-type-proyectos.php' );
 		require_once( ST_DIR . 'inc/post-type-publicaciones.php' );
+        require_once( ST_DIR . 'inc/post-type-tecnologias.php' );
+        
 		//Metaboxes
 		require_once( ST_DIR . 'inc/metaboxes/investigaciones-metabox.php' );
 		require_once( ST_DIR . 'inc/metaboxes/miembros-metabox.php' );
@@ -69,6 +71,7 @@ class Sydney_Toolbox {
 		require_once( ST_DIR . 'inc/metaboxes/proyectos-metabox.php' );
 		require_once( ST_DIR . 'inc/metaboxes/publicaciones-metabox.php' );
 		require_once( ST_DIR . 'inc/metaboxes/singles-metabox.php' );
+        require_once( ST_DIR . 'inc/metaboxes/tecnologias-metabox.php' );
 	}
 
 	/**

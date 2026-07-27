@@ -7,7 +7,14 @@
 ?>
 
 <?php $news = new WP_QUERY( array( 'post_type' => 'post', 'posts_per_page' => 4 ) );?>
-<?php $news_page = get_page_by_title('Noticias') ?>
+<?php 
+
+// $news_page = get_page_by_title('Noticias') 
+
+
+$news_page = get_page_by_path( 'noticias', OBJECT, 'page' );
+
+?>
 
 <div class="col-lg-12">
 	<div class="row front-page-row-title">

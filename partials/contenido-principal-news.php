@@ -7,7 +7,13 @@
 ?>
 
 <?php $news = new WP_QUERY( array( 'post_type' => 'post', 'posts_per_page' => 4 ) );?>
-<?php $news_page = get_page_by_title('News') ?>
+<?php 
+// $news_page = get_page_by_title('News') 
+
+$news_page = get_page_by_path( 'news', OBJECT, 'page' );
+
+
+?>
 
 <div class="col-lg-12">
 	<div class="row front-page-row-title">
@@ -36,6 +42,6 @@
 			</div>
 
 		<?php endwhile; // end of the loop. ?>
-		<a href="<?php echo get_page_link($news_page->ID);?>"><button class="btn btn-sm btn-block"><?php pll_e('Ver todas las noticias'); ?></button></a>
+		<a href="<?php echo get_page_link($news_page->ID);?>"><button class="btn btn-sm btn-block"><?php pll_e('See all news'); ?></button></a>
 	</div>
 </div>
